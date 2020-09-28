@@ -1724,11 +1724,9 @@ accountName | 账户名
 actionType | action类型值
 assetId | 资产ID
 toAccountName | to账户
-gasLimit | 账户名
-accountName | gasLimit
+gasLimit | gasLimit
 amount | 资金数量
-payload | 账户名
-accountName | payload
+payload | payload
 remark | 备注
 nonce | nonce
 

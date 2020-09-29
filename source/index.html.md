@@ -334,6 +334,8 @@ API路径：POST `/api/v1/accountTransfers`
 | fingerPrint | N |  查询下一批数据的指纹，首次传空 | 
 | orderBy | Y | height#asc,height#desc | 
 | searchInternal | N | 查询内部交易 | 
+| assetId | N | 资产ID | 
+
 
 
 

@@ -633,7 +633,7 @@ API路径：POST `/api/v1/triggerIssueAsset`
 | --- | ------|-------------|
 | accountName | Y | 账户名称 |
 | founder | Y | founder |
-| owner | Y | owner |
+| owner | Y | owner (必须和accountName保持一致)|
 | remark | N | 备注 |
 | assetName | Y | 资产全称 |
 | symbol | Y | 资产简称 |

@@ -8,17 +8,17 @@ code_clipboard: true
 
 # API使用说明
 前缀：
-`https://host`
+`https://api.testnet.gaiaopen.network`
 
 
 完整的API地址为：`前缀`+`具体接口路径`
 
 比如，获取账户信息接口为：
-`https://host/` + `/api/v1/getAccount?name=prefsabi@homes`
+`https://api.testnet.gaiaopen.network/` + `/api/v1/getAccount?name=prefsabi@homes`
 
 ->
 
-`https://host/api/v1/getAccount?name=prefsabi@homes`
+`https://api.testnet.gaiaopen.network/api/v1/getAccount?name=prefsabi@homes`
 
 
 - 请注意我们仅支持https访问，不支持http访问。

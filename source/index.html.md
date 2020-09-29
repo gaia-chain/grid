@@ -321,7 +321,8 @@ API路径：POST `/api/v1/accountTransfers`
     "limit":2,
     "fingerPrint":"",
     "orderBy":"height#asc",
-    "searchInternal":true
+    "searchInternal":true,
+    "assetId": 0
 }
 ```
 

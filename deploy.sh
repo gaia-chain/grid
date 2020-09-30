@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+git commit -a -m "Update index.md"
+git push
+
 set -o errexit #abort if any command fails
 me=$(basename "$0")
 

@@ -361,7 +361,7 @@ API路径：POST `/api/v1/accountTransfers`
                 "amount": 100000000000000,
                 "transactionType": "internal",
                 "payload": "",
-                "state": 1,
+                "state": 1,  //0:失败 1:成功
                 "errorMsg": ""
             },
             {
@@ -854,6 +854,74 @@ API路径：GET `/api/v1/getAssetInfoByName`
 }
 
 ```
+
+
+## 构建更新资产协议结构体
+
+### HTTP Request
+
+API路径：POST `/api/v1/triggerUpdateContract`
+
+> 示例:
+
+```json
+
+{
+    "accountName":"@homes",
+    "remark":"更新",
+    "assetId":2,
+    "contract":"contract0002"
+}
+```
+
+### 请求参数
+| 字段名称 | 是否必须 | 描述 |
+| --- | ------|-------------|
+| accountName | Y | 账户名称 |
+| remark | N | 备注 |
+| assetId | Y | 资产ID |
+| contract | Y | 协议 |
+
+
+> 返回:
+
+```json
+{
+    "data": {
+        "parameter": {
+            "requestParameter": {
+                "accountName": "@homes",
+                "assetId": 2,
+                "contract": "contract0002",
+                "remark": "更新"
+            },
+            "payloadParameter": {
+                "assetId": 2,
+                "contract": "contract0002"
+            }
+        },
+        "result": {
+            "chainId": 1,
+            "gasAssetId": 0,
+            "gasPrice": 1000,
+            "action": {
+                "accountName": "@homes",
+                "actionType": 516,
+                "assetId": 0,
+                "toAccountName": "asset@gon",
+                "gasLimit": 100000,
+                "amount": 0,
+                "payload": "0xce028c636f6e747261637430303032",
+                "remark": "更新",
+                "nonce": 87
+            }
+        }
+    },
+    "errorCode": 0,
+    "errorMsg": ""
+}
+```
+
 
 # 交易
 
@@ -1352,73 +1420,6 @@ API路径：POST `/api/v1/triggerCreateContract`
 }
 ```
 
-## 构建更新资产协议结构体
-
-### HTTP Request
-
-API路径：POST `/api/v1/triggerUpdateContract`
-
-> 示例:
-
-```json
-
-{
-    "accountName":"@homes",
-    "remark":"更新",
-    "assetId":2,
-    "contract":"contract0002"
-}
-```
-
-### 请求参数
-| 字段名称 | 是否必须 | 描述 |
-| --- | ------|-------------|
-| accountName | Y | 账户名称 |
-| remark | N | 备注 |
-| assetId | Y | 资产ID |
-| contract | Y | 协议 |
-
-
-> 返回:
-
-```json
-{
-    "data": {
-        "parameter": {
-            "requestParameter": {
-                "accountName": "@homes",
-                "assetId": 2,
-                "contract": "contract0002",
-                "remark": "更新"
-            },
-            "payloadParameter": {
-                "assetId": 2,
-                "contract": "contract0002"
-            }
-        },
-        "result": {
-            "chainId": 1,
-            "gasAssetId": 0,
-            "gasPrice": 1000,
-            "action": {
-                "accountName": "@homes",
-                "actionType": 516,
-                "assetId": 2,
-                "toAccountName": "asset@gon",
-                "gasLimit": 100000,
-                "amount": 0,
-                "payload": "0xce028c636f6e747261637430303032",
-                "remark": "更新",
-                "nonce": 87
-            }
-        }
-    },
-    "errorCode": 0,
-    "errorMsg": ""
-}
-```
-
-
 ## 合约调用记录
 
 ### HTTP Request
@@ -1752,3 +1753,13 @@ nonce | nonce
 514 | 销毁资产
 515 | 转账
 516 | 更新资产协议
+
+### accountType 参数
+名称 | 备注
+---|---
+1 | 系统根账户
+2 | 系统子账户
+3 | 社区根账户
+4 | 社区子账户
+5 | 个人账户
+6 | 特殊账户

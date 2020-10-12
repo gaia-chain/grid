@@ -349,6 +349,9 @@
                   <li>
                     <a href="#b1e75d105d" class="toc-h2 toc-link" data-title="根据币种全称获取币种信息">根据币种全称获取币种信息</a>
                   </li>
+                  <li>
+                    <a href="#ecdc07b841" class="toc-h2 toc-link" data-title="构建更新资产协议结构体">构建更新资产协议结构体</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -379,9 +382,6 @@
                   </li>
                   <li>
                     <a href="#11958a57f3" class="toc-h2 toc-link" data-title="构建创建合约结构体">构建创建合约结构体</a>
-                  </li>
-                  <li>
-                    <a href="#ecdc07b841" class="toc-h2 toc-link" data-title="构建更新资产协议结构体">构建更新资产协议结构体</a>
                   </li>
                   <li>
                     <a href="#5b10d45e5c" class="toc-h2 toc-link" data-title="合约调用记录">合约调用记录</a>
@@ -829,7 +829,7 @@
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000000000000</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"transactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"internal"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="mi">0</span><span class="err">:失败</span><span class="w"> </span><span class="mi">1</span><span class="err">:成功</span><span class="w">
                 </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
@@ -1428,7 +1428,87 @@
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h1 id='dfe799947f'>交易</h1><h2 id='da1feb7080'>构建转账结构体</h2><h3 id='http-request-13'>HTTP Request</h3>
+</span></code></pre></div><h2 id='ecdc07b841'>构建更新资产协议结构体</h2><h3 id='http-request-13'>HTTP Request</h3>
+<p>API路径：POST <code>/api/v1/triggerUpdateContract</code></p>
+
+<blockquote>
+<p>示例:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountName"</span><span class="p">:</span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"更新"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contract"</span><span class="p">:</span><span class="s2">"contract0002"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='1f9ac54b15-13'>请求参数</h3>
+<table><thead>
+<tr>
+<th>字段名称</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accountName</td>
+<td>Y</td>
+<td>账户名称</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>N</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>assetId</td>
+<td>Y</td>
+<td>资产ID</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>Y</td>
+<td>协议</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>返回:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"requestParameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract0002"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更新"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"payloadParameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract0002"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"chainId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"gasAssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"gasPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"toAccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asset@gon"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"gasLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xce028c636f6e747261637430303032"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更新"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='dfe799947f'>交易</h1><h2 id='da1feb7080'>构建转账结构体</h2><h3 id='http-request-14'>HTTP Request</h3>
 <p>API路径：POST <code>/api/v1/triggerTransfer</code></p>
 
 <blockquote>
@@ -1442,7 +1522,7 @@
     </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"toAccountName"</span><span class="p">:</span><span class="s2">"prefsabi@homes"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-13'>请求参数</h3>
+</span></code></pre></div><h3 id='1f9ac54b15-14'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1511,7 +1591,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='1333ca551f'>查询交易信息</h2><h3 id='http-request-14'>HTTP Request</h3>
+</span></code></pre></div><h2 id='1333ca551f'>查询交易信息</h2><h3 id='http-request-15'>HTTP Request</h3>
 <p>API路径：GET <code>/api/v1/getTransactionInfoByHash</code></p>
 
 <blockquote>
@@ -1519,7 +1599,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell"><code>/api/v1/getTransactionInfoByHash?hash<span class="o">=</span>0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58
 
-</code></pre></div><h3 id='1f9ac54b15-14'>请求参数</h3>
+</code></pre></div><h3 id='1f9ac54b15-15'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1568,7 +1648,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='1918af0af5'>查询交易状态</h2><h3 id='http-request-15'>HTTP Request</h3>
+</span></code></pre></div><h2 id='1918af0af5'>查询交易状态</h2><h3 id='http-request-16'>HTTP Request</h3>
 <p>API路径：GET <code>/api/v1/getTransactionReceipt</code></p>
 
 <blockquote>
@@ -1576,7 +1656,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell"><code>/api/v1/getTransactionReceipt?hash<span class="o">=</span>0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58
 
-</code></pre></div><h3 id='1f9ac54b15-15'>请求参数</h3>
+</code></pre></div><h3 id='1f9ac54b15-16'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1668,7 +1748,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='72045015ab'>合约</h1><h2 id='051e7864af'>查看合约结果</h2><h3 id='http-request-16'>HTTP Request</h3>
+</span></code></pre></div><h1 id='72045015ab'>合约</h1><h2 id='051e7864af'>查看合约结果</h2><h3 id='http-request-17'>HTTP Request</h3>
 <p>API路径：POST <code>/api/v1/getContractResult</code></p>
 
 <blockquote>
@@ -1682,7 +1762,7 @@
     </span><span class="nl">"function"</span><span class="p">:</span><span class="s2">"get"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"parameters"</span><span class="p">:[</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"2"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-16'>请求参数</h3>
+</span></code></pre></div><h3 id='1f9ac54b15-17'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1737,7 +1817,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='6b15dcb6a3'>获取合约信息</h2><h3 id='http-request-17'>HTTP Request</h3>
+</span></code></pre></div><h2 id='6b15dcb6a3'>获取合约信息</h2><h3 id='http-request-18'>HTTP Request</h3>
 <p>API路径：GET <code>/api/v1/getContract</code></p>
 
 <blockquote>
@@ -1745,7 +1825,7 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell"><code>/api/v1/getContract?name<span class="o">=</span>prefsabi@homes
 
-</code></pre></div><h3 id='1f9ac54b15-17'>请求参数</h3>
+</code></pre></div><h3 id='1f9ac54b15-18'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1794,7 +1874,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='50ca39cf4c'>构建调用智能合约结构体</h2><h3 id='http-request-18'>HTTP Request</h3>
+</span></code></pre></div><h2 id='50ca39cf4c'>构建调用智能合约结构体</h2><h3 id='http-request-19'>HTTP Request</h3>
 <p>API路径：POST <code>/api/v1/triggerSmartContract</code></p>
 
 <blockquote>
@@ -1811,7 +1891,7 @@
     </span><span class="nl">"parameters"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4127</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="w">
     </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"你好"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-18'>请求参数</h3>
+</span></code></pre></div><h3 id='1f9ac54b15-19'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1910,7 +1990,7 @@
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='11958a57f3'>构建创建合约结构体</h2><h3 id='http-request-19'>HTTP Request</h3>
+</span></code></pre></div><h2 id='11958a57f3'>构建创建合约结构体</h2><h3 id='http-request-20'>HTTP Request</h3>
 <p>API路径：POST <code>/api/v1/triggerCreateContract</code></p>
 
 <blockquote>
@@ -1924,7 +2004,7 @@
     </span><span class="nl">"bin"</span><span class="p">:</span><span class="s2">"608060405261107a806100136000396000f300608060405260043610610128576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063124de4711461012a57806317d318bc146101815780631b05c0b2146102045780632b25a38b1461021b5780634708293e14610252578063483b80af146102ae5780634903b0d1146102db5780634bd464481461031c5780635ea32db51461035357806368669bc8146103de5780637a727a41146104285780637d3d999b1461045f57806389174bb7146104ac5780638a108c0e1461051a57806392ff0d31146105475780639b0fd02914610576578063b639096a146105c1578063bf2e5de414610678578063c3397814146106b9578063c6bcfa5c146106fa578063d38abe6b1461082c578063e80c2b311461086d575b005b34801561013657600080fd5b5061017f60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506108c4565b005b34801561018d57600080fd5b506101e8600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506108e4565b604051808260070b60070b815260200191505060405180910390f35b34801561021057600080fd5b506102196108fa565b005b34801561022757600080fd5b506102506004803603810190808035906020019092919080359060200190929190505050610941565b005b6102ac600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506109d5565b005b3480156102ba57600080fd5b506102d9600480360381019080803590602001909291905050506109e1565b005b3480156102e757600080fd5b5061030660048036038101908080359060200190929190505050610a2d565b6040518082815260200191505060405180910390f35b34801561032857600080fd5b506103516004803603810190808035906020019092919080359060200190929190505050610a37565b005b34801561035f57600080fd5b506103ba600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610c2c565b60405180848152602001838152602001828152602001935050505060405180910390f35b610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190505050610c46565b005b34801561043457600080fd5b5061045d6004803603810190808035906020019092919080359060200190929190505050610c96565b005b34801561046b57600080fd5b506104aa600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ce4565b005b3480156104b857600080fd5b50610518600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019092919080359060200190929190803560070b9060200190929190505050610d42565b005b34801561052657600080fd5b5061054560048036038101908080359060200190929190505050610dcb565b005b34801561055357600080fd5b5061055c610e17565b604051808215151515815260200191505060405180910390f35b34801561058257600080fd5b506105ab6004803603810190808035906020019092919080359060200190929190505050610e20565b6040518082815260200191505060405180910390f35b3480156105cd57600080fd5b506105f66004803603810190808035906020019092919080359060200190929190505050610e2d565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b34801561068457600080fd5b506106a360048036038101908080359060200190929190505050610f5f565b6040518082815260200191505060405180910390f35b3480156106c557600080fd5b506106f8600480360381019080803590602001909291908035906020019092919080359060200190929190505050610f6f565b005b34801561070657600080fd5b506107b1600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610fbf565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156107f15780820151818401526020810190506107d6565b50505050905090810190601f16801561081e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561083857600080fd5b506108576004803603810190808035906020019092919050505061102f565b6040518082815260200191505060405180910390f35b34801561087957600080fd5b506108986004803603810190808035906020019092919050505061103a565b604051808460001916600019168152602001838152602001828152602001935050505060405180910390f35b828273ffffffffffffffffffffffffffffffffffffffff1682c150505050565b60008082805190602001cf905080915050919050565b6000ca90507f67657474780000000000000000000000000000000000000000000000000000008160405180826000191660001916815260200191505060405180910390a150565b6000808383d0915091507f67657445706f63680000000000000000000000000000000000000000000000008260010260405180826000191660001916815260200191505060405180910390a17f67657445706f63680000000000000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a150505050565b80805190602001c05050565b600081cd90507f74657374476173000000000000000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a15050565b6000819050919050565b60008060008060008060008888d296509650965096509650965096507f67657443616e64696461746500000000000000000000000000000000000000008760010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008660010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008560010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008460010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008360010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008260010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a1505050505050505050565b600080600083805190602001c99250925092509193909250565b8273ffffffffffffffffffffffffffffffffffffffff166108fc838391821502919060405160006040518083038186868a8ac4945050505050158015610c90573d6000803e3d6000fd5b50505050565b60008282c690507f676574536e617073686f7454696d6500000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a1505050565b7f67657462616c616e6365657800000000000000000000000000000000000000008273ffffffffffffffffffffffffffffffffffffffff1682c360010260405180826000191660001916815260200191505060405180910390a15050565b600080600191505b8260070b82131515610dc2578673ffffffffffffffffffffffffffffffffffffffff16868686c790507f676574536e617042616c616e63650000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a18180600101925050610d4a565b50505050505050565b600081d190507f67657443616e6469646174654e756d00000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a15050565b60006001905090565b60008282c8905092915050565b6000606060006060600080ca93507f64617461310000000000000000000000000000000000000000000000000000008460405180826000191660001916815260200191505060405180910390a160646040519080825280601f01601f191660200182016040528015610eae5781602001602082028038833980820191505090505b509250878784805190602001c580601f01601f191660405101604052509150ca90507f64617461320000000000000000000000000000000000000000000000000000008460405180826000191660001916815260200191505060405180910390a17f64617461330000000000000000000000000000000000000000000000000000008160405180826000191660001916815260200191505060405180910390a1818395509550505050509250929050565b60008082d6905080915050919050565b6000838383d390507f676574566f7465725374616b65000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a150505050565b606080600060146040519080825280601f01601f191660200182016040528015610ff85781602001602082028038833980820191505090505b50915085805190602001868051906020018580519060200189cc80601f01601f191660405101604052905081925050509392505050565b600081cb9050919050565b600080600083c292509250925091939092505600a165627a7a7230582002feaa902ba4a656f8e92bc4dca0e5d7636f039e341a027e3712920f2953c3a40029"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"parameters"</span><span class="p">:[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-19'>请求参数</h3>
+</span></code></pre></div><h3 id='1f9ac54b15-20'>请求参数</h3>
 <table><thead>
 <tr>
 <th>字段名称</th>
@@ -1992,86 +2072,6 @@
                 </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x608060405261107a806100136000396000f300608060405260043610610128576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063124de4711461012a57806317d318bc146101815780631b05c0b2146102045780632b25a38b1461021b5780634708293e14610252578063483b80af146102ae5780634903b0d1146102db5780634bd464481461031c5780635ea32db51461035357806368669bc8146103de5780637a727a41146104285780637d3d999b1461045f57806389174bb7146104ac5780638a108c0e1461051a57806392ff0d31146105475780639b0fd02914610576578063b639096a146105c1578063bf2e5de414610678578063c3397814146106b9578063c6bcfa5c146106fa578063d38abe6b1461082c578063e80c2b311461086d575b005b34801561013657600080fd5b5061017f60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506108c4565b005b34801561018d57600080fd5b506101e8600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506108e4565b604051808260070b60070b815260200191505060405180910390f35b34801561021057600080fd5b506102196108fa565b005b34801561022757600080fd5b506102506004803603810190808035906020019092919080359060200190929190505050610941565b005b6102ac600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506109d5565b005b3480156102ba57600080fd5b506102d9600480360381019080803590602001909291905050506109e1565b005b3480156102e757600080fd5b5061030660048036038101908080359060200190929190505050610a2d565b6040518082815260200191505060405180910390f35b34801561032857600080fd5b506103516004803603810190808035906020019092919080359060200190929190505050610a37565b005b34801561035f57600080fd5b506103ba600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610c2c565b60405180848152602001838152602001828152602001935050505060405180910390f35b610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190505050610c46565b005b34801561043457600080fd5b5061045d6004803603810190808035906020019092919080359060200190929190505050610c96565b005b34801561046b57600080fd5b506104aa600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610ce4565b005b3480156104b857600080fd5b50610518600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019092919080359060200190929190803560070b9060200190929190505050610d42565b005b34801561052657600080fd5b5061054560048036038101908080359060200190929190505050610dcb565b005b34801561055357600080fd5b5061055c610e17565b604051808215151515815260200191505060405180910390f35b34801561058257600080fd5b506105ab6004803603810190808035906020019092919080359060200190929190505050610e20565b6040518082815260200191505060405180910390f35b3480156105cd57600080fd5b506105f66004803603810190808035906020019092919080359060200190929190505050610e2d565b6040518083815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b34801561068457600080fd5b506106a360048036038101908080359060200190929190505050610f5f565b6040518082815260200191505060405180910390f35b3480156106c557600080fd5b506106f8600480360381019080803590602001909291908035906020019092919080359060200190929190505050610f6f565b005b34801561070657600080fd5b506107b1600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610fbf565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156107f15780820151818401526020810190506107d6565b50505050905090810190601f16801561081e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561083857600080fd5b506108576004803603810190808035906020019092919050505061102f565b6040518082815260200191505060405180910390f35b34801561087957600080fd5b506108986004803603810190808035906020019092919050505061103a565b604051808460001916600019168152602001838152602001828152602001935050505060405180910390f35b828273ffffffffffffffffffffffffffffffffffffffff1682c150505050565b60008082805190602001cf905080915050919050565b6000ca90507f67657474780000000000000000000000000000000000000000000000000000008160405180826000191660001916815260200191505060405180910390a150565b6000808383d0915091507f67657445706f63680000000000000000000000000000000000000000000000008260010260405180826000191660001916815260200191505060405180910390a17f67657445706f63680000000000000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a150505050565b80805190602001c05050565b600081cd90507f74657374476173000000000000000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a15050565b6000819050919050565b60008060008060008060008888d296509650965096509650965096507f67657443616e64696461746500000000000000000000000000000000000000008760010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008660010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008560010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008460010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008360010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008260010260405180826000191660001916815260200191505060405180910390a17f67657443616e64696461746500000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a1505050505050505050565b600080600083805190602001c99250925092509193909250565b8273ffffffffffffffffffffffffffffffffffffffff166108fc838391821502919060405160006040518083038186868a8ac4945050505050158015610c90573d6000803e3d6000fd5b50505050565b60008282c690507f676574536e617073686f7454696d6500000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a1505050565b7f67657462616c616e6365657800000000000000000000000000000000000000008273ffffffffffffffffffffffffffffffffffffffff1682c360010260405180826000191660001916815260200191505060405180910390a15050565b600080600191505b8260070b82131515610dc2578673ffffffffffffffffffffffffffffffffffffffff16868686c790507f676574536e617042616c616e63650000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a18180600101925050610d4a565b50505050505050565b600081d190507f67657443616e6469646174654e756d00000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a15050565b60006001905090565b60008282c8905092915050565b6000606060006060600080ca93507f64617461310000000000000000000000000000000000000000000000000000008460405180826000191660001916815260200191505060405180910390a160646040519080825280601f01601f191660200182016040528015610eae5781602001602082028038833980820191505090505b509250878784805190602001c580601f01601f191660405101604052509150ca90507f64617461320000000000000000000000000000000000000000000000000000008460405180826000191660001916815260200191505060405180910390a17f64617461330000000000000000000000000000000000000000000000000000008160405180826000191660001916815260200191505060405180910390a1818395509550505050509250929050565b60008082d6905080915050919050565b6000838383d390507f676574566f7465725374616b65000000000000000000000000000000000000008160010260405180826000191660001916815260200191505060405180910390a150505050565b606080600060146040519080825280601f01601f191660200182016040528015610ff85781602001602082028038833980820191505090505b50915085805190602001868051906020018580519060200189cc80601f01601f191660405101604052905081925050509392505050565b600081cb9050919050565b600080600083c292509250925091939092505600a165627a7a7230582002feaa902ba4a656f8e92bc4dca0e5d7636f039e341a027e3712920f2953c3a400293078"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"创建合约"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='ecdc07b841'>构建更新资产协议结构体</h2><h3 id='http-request-20'>HTTP Request</h3>
-<p>API路径：POST <code>/api/v1/triggerUpdateContract</code></p>
-
-<blockquote>
-<p>示例:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-    </span><span class="nl">"accountName"</span><span class="p">:</span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"remark"</span><span class="p">:</span><span class="s2">"更新"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contract"</span><span class="p">:</span><span class="s2">"contract0002"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-20'>请求参数</h3>
-<table><thead>
-<tr>
-<th>字段名称</th>
-<th>是否必须</th>
-<th>描述</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>accountName</td>
-<td>Y</td>
-<td>账户名称</td>
-</tr>
-<tr>
-<td>remark</td>
-<td>N</td>
-<td>备注</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td>Y</td>
-<td>资产ID</td>
-</tr>
-<tr>
-<td>contract</td>
-<td>Y</td>
-<td>协议</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>返回:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"requestParameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract0002"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更新"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"payloadParameter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contract0002"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"chainId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"gasAssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"gasPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"accountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@homes"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"toAccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asset@gon"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"gasLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xce028c636f6e747261637430303032"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"更新"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -2494,6 +2494,38 @@
 <tr>
 <td>516</td>
 <td>更新资产协议</td>
+</tr>
+</tbody></table>
+<h3 id='accounttype'>accountType 参数</h3>
+<table><thead>
+<tr>
+<th>名称</th>
+<th>备注</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>系统根账户</td>
+</tr>
+<tr>
+<td>2</td>
+<td>系统子账户</td>
+</tr>
+<tr>
+<td>3</td>
+<td>社区根账户</td>
+</tr>
+<tr>
+<td>4</td>
+<td>社区子账户</td>
+</tr>
+<tr>
+<td>5</td>
+<td>个人账户</td>
+</tr>
+<tr>
+<td>6</td>
+<td>特殊账户</td>
 </tr>
 </tbody></table>
 

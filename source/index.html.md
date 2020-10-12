@@ -362,6 +362,7 @@ API路径：POST `/api/v1/accountTransfers`
                 "transactionType": "internal",
                 "payload": "",
                 "state": 1,  //0:失败 1:成功
+                "remark": "",
                 "errorMsg": ""
             },
             {
@@ -377,6 +378,7 @@ API路径：POST `/api/v1/accountTransfers`
                 "transactionType": "internal",
                 "payload": "",
                 "state": 1,
+                "remark": "",
                 "errorMsg": ""
             }
         ]

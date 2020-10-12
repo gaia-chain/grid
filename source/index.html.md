@@ -1043,7 +1043,8 @@ API路径：GET `/api/v1/getTransactionInfoByHash`
         ],
         "gasAssetId": 0,
         "gasPrice": 1000,
-        "gasCost": 500000000
+        "gasCost": 500000000,
+        "timestamp": 1598947845
     },
     "errorCode": 0,
     "errorMsg": ""

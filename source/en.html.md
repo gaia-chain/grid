@@ -533,7 +533,7 @@ API path：POST `/api/v1/triggerUpdateAccountAuthor`
 
 
 
-# assets
+# Assets
 
 ## Build the structure of additional assets
 

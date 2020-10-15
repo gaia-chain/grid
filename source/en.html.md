@@ -1008,7 +1008,7 @@ API path：GET `/api/v1/getTransactionInfoByHash`
 > Example:
 
 ```bash
-/api/v1/getTransactionInfoByHash?hash=0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58
+/api/v1/getTransactionInfoByHash?hash=0x9895a5145d68988a7aca1fc242885cfb9b517fcb0fdac144eff5eea66cc682f0
 
 ```
 
@@ -1024,32 +1024,78 @@ API path：GET `/api/v1/getTransactionInfoByHash`
 ```json
 {
     "data": {
-        "blockHash": "0x55a58ff4ba4b649479fdb26c5cc34109d7c65f0465e8394bb44b137dcfcbcfab",
-        "blockNumber": 268305,
-        "txHash": "0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58",
-        "transactionIndex": 0,
+        "hash": "0xf171ccd84fa580f710f3237f623341369ab8fd984ed7fa9b402cd9fab29ab19f",
+        "height": 1150931,
         "actions": [
             {
-                "actionType": 256,
-                "nonce": 2,
-                "fromAccount": "prefsabi@homes",
-                "toAccount": "account@gon",
-                "assetId": 0,
-                "gasLimit": 500000,
-                "amount": 49,
-                "remark": "hello",
-                "payload": "0xf85188743140686f6d657380b841047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd83313131",
-                "actionHash": "0x7593b62625852c7109633c269abb3bef92f72ab3032ea716f09ff09c9e1063bd",
-                "actionIndex": 0,
-                "signIndex": [
-                    0
+                "actionInfo": {
+                    "gasUsed": 500000,
+                    "gasLimit": 20000000,
+                    "gasPrice": 1000,
+                    "gasAssetId": 0,
+                    "fee": "500000000",
+                    "feeAssetSymbol": "gcoin",
+                    "feeAssetName": "gcoin",
+                    "feeAssetId": 0,
+                    "assetSymbol": "gcoin",
+                    "assetName": "gcoin",
+                    "assetId": 0,
+                    "actionType": 256,
+                    "from": "@gopen",
+                    "to": "account@gon",
+                    "amount": "100000000000",
+                    "payload": "{\"accountName\":\"uc6363086f04@gopen\",\"founder\":\"@gopen\",\"publicKey\":\"0x0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"}",
+                    "remark": "",
+                    "state": 1,
+                    "created": 1602644181,
+                    "nonce": 1217,
+                    "errorMsg": "",
+                    "payer": "",
+                    "payerParentSigner": "",
+                    "parentSigner": "",
+                    "authorObjs": "[{\"index\":0,\"owner\":\"0x047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd\",\"weight\":1}]",
+                    "permitType": 0,
+                    "threshold": 1
+                },
+                "inlineActionInfo": [
+                    {
+                        "assetName": "gcoin",
+                        "assetSymbol": "gcoin",
+                        "assetId": 0,
+                        "actionType": 515,
+                        "from": "account@gon",
+                        "to": "uc6363086f04@gopen",
+                        "amount": "100000000000",
+                        "payload": "\"\"",
+                        "remark": "",
+                        "state": 1,
+                        "errorMsg": ""
+                    }
+                ],
+                "feeActionInfo": [
+                    {
+                        "assetName": "gcoin",
+                        "assetSymbol": "gcoin",
+                        "assetId": 0,
+                        "actionType": "transfer",
+                        "from": "@gopen",
+                        "to": "spongebob115",
+                        "amount": "100000000",
+                        "type": 0
+                    },
+                    {
+                        "assetName": "gcoin",
+                        "assetSymbol": "gcoin",
+                        "assetId": 0,
+                        "actionType": "transfer",
+                        "from": "@gopen",
+                        "to": "founder@gon",
+                        "amount": "400000000",
+                        "type": 1
+                    }
                 ]
             }
-        ],
-        "gasAssetId": 0,
-        "gasPrice": 1000,
-        "gasCost": 500000000,
-        "timestamp": 1598947845
+        ]
     },
     "errorCode": 0,
     "errorMsg": ""

@@ -1601,7 +1601,7 @@ Abnormal <span class="k">return</span>:
 <blockquote>
 <p>Example:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell"><code>/api/v1/getTransactionInfoByHash?hash<span class="o">=</span>0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58
+<div class="highlight"><pre class="highlight shell"><code>/api/v1/getTransactionInfoByHash?hash<span class="o">=</span>0x9895a5145d68988a7aca1fc242885cfb9b517fcb0fdac144eff5eea66cc682f0
 
 </code></pre></div><h3 id='request-parameter-15'>Request parameter</h3>
 <table><thead>
@@ -1623,32 +1623,78 @@ Abnormal <span class="k">return</span>:
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"blockHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x55a58ff4ba4b649479fdb26c5cc34109d7c65f0465e8394bb44b137dcfcbcfab"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"blockNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">268305</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"txHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3823383e6232d77016f1451a5b6955a977a1f254f73f9e5bdd4ba8c408a96a58"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"transactionIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xf171ccd84fa580f710f3237f623341369ab8fd984ed7fa9b402cd9fab29ab19f"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">1150931</span><span class="p">,</span><span class="w">
         </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"fromAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prefsabi@homes"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"toAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account@gon"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"gasLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xf85188743140686f6d657380b841047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd83313131"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"actionHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x7593b62625852c7109633c269abb3bef92f72ab3032ea716f09ff09c9e1063bd"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"actionIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"signIndex"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                    </span><span class="mi">0</span><span class="w">
+                </span><span class="nl">"actionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"gasUsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"gasLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000000</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"gasPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"gasAssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"feeAssetSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"feeAssetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"feeAssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"assetSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@gopen"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account@gon"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">accountName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">uc6363086f04@gopen</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">founder</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">@gopen</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">publicKey</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span><span class="se">\"</span><span class="s2">}"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1602644181</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="mi">1217</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"payerParentSigner"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"parentSigner"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"authorObjs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">index</span><span class="se">\"</span><span class="s2">:0,</span><span class="se">\"</span><span class="s2">owner</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0x047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">weight</span><span class="se">\"</span><span class="s2">:1}]"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"permitType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"inlineActionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="mi">515</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account@gon"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uc6363086f04@gopen"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"</span><span class="se">\"\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"feeActionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@gopen"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spongebob115"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcoin"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"actionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transfer"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@gopen"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founder@gon"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"400000000"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"gasAssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gasPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gasCost"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1598947845</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"errorMsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">

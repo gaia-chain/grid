@@ -1023,7 +1023,7 @@ API路径：GET `/api/v1/getTransactionInfoByHash`
 ```json
 {
     "data": {
-        "hash": "0xf171ccd84fa580f710f3237f623341369ab8fd984ed7fa9b402cd9fab29ab19f",
+        "block_hash": "0xf171ccd84fa580f710f3237f623341369ab8fd984ed7fa9b402cd9fab29ab19f",
         "height": 1150931,
         "actions": [
             {

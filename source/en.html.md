@@ -8,17 +8,17 @@ code_clipboard: true
 
 # API instructions
 Prefix：
-`https://api.gaiaopen.network`
+`http://api.gaiaopen.network`
 
 
 The complete API address is：`Prefix`+`Specific interface path`
 
 For example, the interface for obtaining account information is：
-`https://api.gaiaopen.network/` + `/api/v1/getAccount?name=prefsabi@homes`
+`http://api.gaiaopen.network/` + `/api/v1/getAccount?name=prefsabi@homes`
 
 ->
 
-`https://api.gaiaopen.network/api/v1/getAccount?name=prefsabi@homes`
+`http://api.gaiaopen.network/api/v1/getAccount?name=prefsabi@homes`
 
 
 - Please note that we only support https access, not http access.
@@ -1048,7 +1048,7 @@ API Path：POST `/api/v1/triggerTransfer`
 
 ### HTTP Request
 
-API Path：GET `/api/v1/getTransactionsByHeight`
+API Path：POST `/api/v1/getTransactionsByHeight`
 
 > Example:
 

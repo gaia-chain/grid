@@ -229,7 +229,7 @@ API路径：GET `/api/v1/accountExist`
 
 ### HTTP Request
 
-API路径：POST `/api/v1/triggerCreatAccount`
+API路径：POST `/api/v1/triggerCreateAccount`
 
 > 示例:
 

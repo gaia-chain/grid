@@ -229,7 +229,7 @@ API Path：GET `/api/v1/accountExist`
 
 ### HTTP Request
 
-API Path：POST `/api/v1/triggerCreatAccount`
+API Path：POST `/api/v1/triggerCreateAccount`
 
 > Example:
 
